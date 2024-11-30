@@ -48,7 +48,9 @@ RUN apt-get install -y php libapache2-mod-php
 
 # Ensure the 000-default.conf file exists in the build context
 # Make sure to update the file path based on where the file actually is in your project directory
-COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+#COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
+COPY config/000-default.conf /etc/apache2/sites-available/000-default.conf
+
 
 # Add your PHP app code to the Docker image (adjust the path as needed)
 ADD . /var/www/html/
